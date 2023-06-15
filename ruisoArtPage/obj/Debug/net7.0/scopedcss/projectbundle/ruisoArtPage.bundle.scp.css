@@ -1,0 +1,483 @@
+/* _content/ruisoArtPage/Views/Home/Index.cshtml.rz.scp.css */
+/*Portafolio*/
+.portafolio[b-t3n5uxdsn6]{
+    /*background: #ffffff;*/
+  }.galeria-port[b-t3n5uxdsn6]{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }.imagen-port[b-t3n5uxdsn6]{
+    width: 14%;
+    height: 250px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+  }.imagen-port a > img[b-t3n5uxdsn6]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }.imagen-port-2[b-t3n5uxdsn6]{
+    width: 24%;
+    height: 400px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+  }.imagen-port-2 a > img[b-t3n5uxdsn6]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+.hover-galeria[b-t3n5uxdsn6]{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background-color: hsla(231, 48%, 19%, 0.7);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }.hover-galeria img[b-t3n5uxdsn6]{
+    width: 50px;
+  }.hover-galeria p[b-t3n5uxdsn6]{
+    color: #fff;
+  }.imagen-port:hover .hover-galeria[b-t3n5uxdsn6]{
+    transform: scale(1);
+  }.imagen-port-2:hover .hover-galeria[b-t3n5uxdsn6]{
+    transform: scale(1);
+  }
+
+  /*Commission*/
+.contact[b-t3n5uxdsn6]{
+    background:#00ff00;
+    width: 100%;
+    height: 300px;
+    /*https://uigradients.com/#Jupiter*/
+    background: #BBD2C5;
+    background: -webkit-linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+    background: linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }.extra[b-t3n5uxdsn6]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.extra h1[b-t3n5uxdsn6]{
+    font-size: 25px;
+    color: #fff;
+  }.myFtexts[b-t3n5uxdsn6]{
+    background: #00ff00;
+    width: 100%;
+    height: 70px;
+  
+    display: flex;
+    /*https://uigradients.com/#SweetMorning*/
+    /*https://uigradients.com/#Lawrencium*/
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+    background: linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.myFtexts h1[b-t3n5uxdsn6]{
+    font-size: 50px;
+    color: #fff;
+  }.extra_2[b-t3n5uxdsn6]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 30px;
+  }
+
+/*About Us Tarjetas*/
+.contenedor-sobre-nosotros[b-t3n5uxdsn6]{
+  display: flex;
+  justify-content: space-evenly;
+}.img-about-us[b-t3n5uxdsn6]{
+  width: 48%;
+}.about-us .contenido-textos[b-t3n5uxdsn6]{
+  width: 48%;
+}.contenido-textos h3[b-t3n5uxdsn6]{
+  margin-bottom: 15px;
+}.contenido-textos h3 span[b-t3n5uxdsn6]{
+  background: #4d0686;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  margin-right: 5px;
+}.contenido-textos p[b-t3n5uxdsn6]{
+  padding: 0px 0px 30px 15px;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.img-about-us-foto[b-t3n5uxdsn6]{
+  width: 35%;
+  height: 35%;
+}.logo-ruiso[b-t3n5uxdsn6]{
+  width: 20%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* _content/ruisoArtPage/Views/Product/Details.cshtml.rz.scp.css */
+/*Contact To Me*/
+.contact[b-lg3iiq96a9]{
+    background:#00ff00;
+    width: 100%;
+    height: 300px;
+    /*https://uigradients.com/#Jupiter*/
+    background: #BBD2C5;
+    background: -webkit-linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+    background: linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }.extra[b-lg3iiq96a9]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.extra h1[b-lg3iiq96a9]{
+    font-size: 25px;
+    color: #fff;
+  }.myFtexts[b-lg3iiq96a9]{
+    background: #00ff00;
+    width: 100%;
+    height: 70px;
+  
+    display: flex;
+    /*https://uigradients.com/#SweetMorning*/
+    /*https://uigradients.com/#Lawrencium*/
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+    background: linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.myFtexts h1[b-lg3iiq96a9]{
+    font-size: 50px;
+    color: #fff;
+  }.extra_2[b-lg3iiq96a9]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 30px;
+  }
+
+  /*Portafolio*/
+  .portafolio[b-lg3iiq96a9]{
+    background: #e0e0e0;
+  }.galeria-port[b-lg3iiq96a9]{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }.imagen-port[b-lg3iiq96a9]{
+    width: 24%;
+    height: 400px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+  }.imagen-port a > img[b-lg3iiq96a9]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }.hover-galeria[b-lg3iiq96a9]{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background-color: hsla(231, 48%, 19%, 0.7);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }.hover-galeria img[b-lg3iiq96a9]{
+    width: 50px;
+  }.hover-galeria p[b-lg3iiq96a9]{
+    color: #fff;
+  }.imagen-port:hover .hover-galeria[b-lg3iiq96a9]{
+    transform: scale(1);
+  }
+/* _content/ruisoArtPage/Views/Product/Index.cshtml.rz.scp.css */
+/*Contact To Me*/
+.contact[b-ofww3fx3ml]{
+    background:#00ff00;
+    width: 100%;
+    height: 300px;
+    /*https://uigradients.com/#Jupiter*/
+    background: #BBD2C5;
+    background: -webkit-linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+    background: linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }.extra[b-ofww3fx3ml]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.extra h1[b-ofww3fx3ml]{
+    font-size: 25px;
+    color: #fff;
+  }.myFtexts[b-ofww3fx3ml]{
+    background: #00ff00;
+    width: 100%;
+    height: 70px;
+  
+    display: flex;
+    /*https://uigradients.com/#SweetMorning*/
+    /*https://uigradients.com/#Lawrencium*/
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+    background: linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.myFtexts h1[b-ofww3fx3ml]{
+    font-size: 50px;
+    color: #fff;
+  }.extra_2[b-ofww3fx3ml]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 30px;
+  }
+/* _content/ruisoArtPage/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+*[b-bs6hfpprtz]{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body[b-bs6hfpprtz]{
+  font-family: 'Open Sans', sans-serif;
+}
+.container[b-bs6hfpprtz]{
+  padding: 10px 0;
+  width: 90%;
+  max-width: 1500px;
+  margin: auto;
+  overflow: hidden;
+}
+.image_tree[b-bs6hfpprtz]{
+  width: 10px;
+}
+/*aqui iria un titulo por sitio, depronto sea en site.css y no aqui en el de layout*/
+/*HEADER*/
+.myHeader[b-bs6hfpprtz]{
+  width: 100%;
+  height: 500px;
+
+  /*https://uigradients.com/#RoyalBlue+Petrol    https://uigradients.com/#Amin*/
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, hsla(260, 100%, 44%, 0.40), hsla(272, 76%, 53%, 0.40)),url("http://localhost/images/portada.jpg");
+  background: linear-gradient(to right, hsla(260, 100%, 44%, 0.40), hsla(272, 76%, 53%, 0.40)),url("http://localhost/images/portada.jpg");
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}.wave[b-bs6hfpprtz]{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}.myTextHeader[b-bs6hfpprtz]{
+  display: flex;
+  height: 230px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}.myTextHeader h1[b-bs6hfpprtz]{
+  font-size: 50px;
+  color: #fff;
+}.myTextHeader h2[b-bs6hfpprtz]{
+  font-size: 30px;
+  color: #fff;
+}
+
+/*Contact To Me*/
+.contact[b-bs6hfpprtz]{
+  background:#00ff00;
+  width: 100%;
+  height: 400px;
+  /*https://uigradients.com/#Amin*/
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2),url("http://localhost/images/pexels-karol-d-1111692.jpg");
+  background: linear-gradient(to right, hsla(260, 100%, 44%, 0.3), hsla(272, 76%, 53%, 0.3)),url("http://localhost/images/pexels-karol-d-1111692.jpg");
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}.extra[b-bs6hfpprtz]{
+  background-color: #00ff0000;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}.extra h1[b-bs6hfpprtz]{
+  font-size: 25px;
+  color: #fff;
+}.myFtexts[b-bs6hfpprtz]{
+  background: #00ff00;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  /*https://uigradients.com/#Lawrencium*/
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, hsla(240, 27%, 19%, 0.7), hsla(245, 39%, 28%, 0.7), hsla(246, 55%, 10%, 0.7));
+  background: linear-gradient(to right, hsla(240, 27%, 19%, 0.7), hsla(245, 39%, 28%, 0.7), hsla(246, 55%, 10%, 0.7));
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}.myFtexts h1[b-bs6hfpprtz]{
+  font-size: 50px;
+  color: #fff;
+}.extra_2[b-bs6hfpprtz]{
+  background-color: #00ff0000;
+  width: 100%;
+  height: 30px;
+}
+
+/*FOOTER*/
+footer[b-bs6hfpprtz]{
+  background: #1f1f1f;
+  padding: 50px 0 30px 0;
+  margin: auto;
+  overflow: hidden;
+}.preFooter[b-bs6hfpprtz]{
+  background: #343434;
+  width: 100%;
+  height: 50px;
+}.preFooter p[b-bs6hfpprtz]{
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+}.conteiner_footer[b-bs6hfpprtz]{
+  display: flex;
+  width: 95%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}.content_foo[b-bs6hfpprtz]{
+  text-align: center;
+}.content_foo h4[b-bs6hfpprtz]{
+  font-size: 15px;
+  color: #fff;
+  border-bottom: 1px solid #ffd89b;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}.content_foo p[b-bs6hfpprtz]{
+  color: #d7d7d7;
+  font-size: 12px;
+}.separator[b-bs6hfpprtz]{
+  border-bottom: 1px solid #fff;
+  width: 95%;
+  margin-top: 50px;
+}.tittle_final[b-bs6hfpprtz]{
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0 0 0;
+  color: #9e9797
+}
+
+/*
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+*/

@@ -1,0 +1,90 @@
+/*Contact To Me*/
+.contact[b-lg3iiq96a9]{
+    background:#00ff00;
+    width: 100%;
+    height: 300px;
+    /*https://uigradients.com/#Jupiter*/
+    background: #BBD2C5;
+    background: -webkit-linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+    background: linear-gradient(to right, hsla(231, 29%, 22%, 0.7), hsl(202, 17%, 39%, 0.7), hsl(146, 20%, 78%, 0.7)),url("http://localhost/images/pexels-mali-maeder-1043331.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }.extra[b-lg3iiq96a9]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.extra h1[b-lg3iiq96a9]{
+    font-size: 25px;
+    color: #fff;
+  }.myFtexts[b-lg3iiq96a9]{
+    background: #00ff00;
+    width: 100%;
+    height: 70px;
+  
+    display: flex;
+    /*https://uigradients.com/#SweetMorning*/
+    /*https://uigradients.com/#Lawrencium*/
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+    background: linear-gradient(to right, hsla(240, 28%, 19%, 0.3), hsla(245, 39%, 28%, 0.3), hsla(246, 55%, 10%, 0.3));
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }.myFtexts h1[b-lg3iiq96a9]{
+    font-size: 50px;
+    color: #fff;
+  }.extra_2[b-lg3iiq96a9]{
+    background-color: #00ff0000;
+    width: 100%;
+    height: 30px;
+  }
+
+  /*Portafolio*/
+  .portafolio[b-lg3iiq96a9]{
+    background: #e0e0e0;
+  }.galeria-port[b-lg3iiq96a9]{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }.imagen-port[b-lg3iiq96a9]{
+    width: 24%;
+    height: 400px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+  }.imagen-port a > img[b-lg3iiq96a9]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }.hover-galeria[b-lg3iiq96a9]{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background-color: hsla(231, 48%, 19%, 0.7);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }.hover-galeria img[b-lg3iiq96a9]{
+    width: 50px;
+  }.hover-galeria p[b-lg3iiq96a9]{
+    color: #fff;
+  }.imagen-port:hover .hover-galeria[b-lg3iiq96a9]{
+    transform: scale(1);
+  }

@@ -1,0 +1,39 @@
+@model Document
+
+@{
+    ViewData["Title"] = "Delete" + Model.Name;
+}
+<div>
+    <h1 class="text-center">Delete<br/>@Model.Name</h1>
+
+    <div class="container text-center">
+        <form asp-action="Delete">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" readonly/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-1">           
+
+                        <div class="form-group">
+                            <label asp-for="Link" class="control-label"></label>
+                            <textarea  asp-for="Link" class="form-control" readonly></textarea>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <input type ="hidden" asp-for="@Model.Id"/>
+                <input type="submit" class="btn btn-danger text-while float-end" value="Confirm"/>
+                <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+

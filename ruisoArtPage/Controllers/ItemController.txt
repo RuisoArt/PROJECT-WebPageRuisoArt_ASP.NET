@@ -1,0 +1,90 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ruisoArtPage.Data;
+using ruisoArtPage.Models;
+
+namespace ruisoArtPage.Controllers{
+    public class ItemController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+
+        public ItemController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index(){
+            var data = _context.Item
+
+                .Include(mt => mt.myTypes)
+                .ThenInclude(p => p.Products)
+
+                .Include(mt => mt.myTypes)
+                .ThenInclude(c => c.Commissions)
+
+                .ToList();
+            return View(data);
+        }
+
+        //-------------------------------------------------------------- DETAILS
+        public IActionResult Details(int id){
+            var data = _context.Item
+                .Include(mt => mt.myTypes)
+                .ThenInclude(p => p.Products)
+                .Include(mt => mt.myTypes)
+                .ThenInclude(c => c.Commissions)            
+                .FirstOrDefault(a => a.Id == id);
+            if (data == null){return View("NotFound");}
+            return View(data);
+        }
+        //-------------------------------------------------------------- EDIT
+        public IActionResult Edit(int id){
+            var data = _context.Item.FirstOrDefault(a => a.Id == id);
+            if (data == null){
+                return View("NotFound");
+            }
+            return View(data);
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, 
+        [Bind("Id, name, description, image, price, tax, quantity, shoppingWay")] Item data){
+            if(!ModelState.IsValid){
+                return View(data);
+            }
+            if(id == data.Id){
+                _context.Item.Update(data);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(data);
+        }
+        //-------------------------------------------------------------- DELETE
+        public IActionResult Delete(int id){
+            var data = _context.Item.FirstOrDefault(a => a.Id == id);
+            return View(data);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int id){
+            var data = _context.Item.FirstOrDefault(a=> a.Id == id);
+            if(data == null) return View("NotFound");
+            _context.Item.Remove(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //-------------------------------------------------------------- CREATE
+        public IActionResult Create(){
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create([Bind("name, description, image, price, tax, quantity, shoppingWay")] Item data){
+            if(!ModelState.IsValid){
+                return View(data);
+            }
+
+            _context.Item.Add(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
+    }
+}

@@ -1,0 +1,71 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ruisoArtPage.Data;
+using ruisoArtPage.Models;
+
+namespace ruisoArtPage.Controllers{
+    public class MyTypeController : Controller{
+        private readonly ApplicationDbContext _context;
+        public MyTypeController(ApplicationDbContext context){
+            _context = context;
+        }
+        public async Task <IActionResult> Index(){
+            var all = await _context.MyType.ToListAsync();
+            return View(all);
+        }
+        //-------------------------------------------------------------- DETAILS
+        public IActionResult Details(int id)        {
+            var data = _context.MyType.FirstOrDefault(a => a.Id == id);
+            if (data == null){
+                return View("NotFound");
+            }
+            return View(data);
+        }
+        //-------------------------------------------------------------- EDIT
+        public IActionResult Edit(int id){
+            var data = _context.MyType.FirstOrDefault(a => a.Id == id);
+            if (data == null){
+                return View("NotFound");
+            }
+            return View(data);
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, 
+        [Bind("Id, name")] MyType data){
+            if(!ModelState.IsValid){
+                return View(data);
+            }
+            if(id == data.Id){
+                _context.MyType.Update(data);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(data);
+        }
+        //-------------------------------------------------------------- DELETE
+        public IActionResult Delete(int id){
+            var data = _context.MyType.FirstOrDefault(a => a.Id == id);
+            return View(data);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int id){
+            var data = _context.MyType.FirstOrDefault(a=> a.Id == id);
+            if(data == null) return View("NotFound");
+            _context.MyType.Remove(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //-------------------------------------------------------------- CREATE
+        public IActionResult Create(){
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create([Bind("name")] MyType data){
+            if(!ModelState.IsValid){return View(data);}
+            _context.MyType.Add(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
+    }
+}

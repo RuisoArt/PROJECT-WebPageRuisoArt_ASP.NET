@@ -1,0 +1,111 @@
+@using ruisoArtPage.Data.ViewModels;
+@model ShoppingCartVM
+@{
+    ViewData["Title"] = "Shopping Cart Summary";
+}
+<div>
+    <h1 class="text-center">Shopping cart summary</h1>
+    <br/><br/>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table text-center align-center" style="width: 800px;">
+            <thead>
+                <tr>
+                    <th>Select Amount</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>SubTotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cartItem in Model.ShoppingCart.ShoppingCartItems)
+                {
+                    <tr>
+                        <td class="align-middle">@cartItem.Amount</td>
+                        <td class="align-middle">@cartItem.Product.name</td>
+                        <td class="align-middle text-nowrap">@cartItem.Product.price.ToString("c")</td>
+                        <td class="align-middle text-nowrap">@((@cartItem.Amount * cartItem.Product.price).ToString("c"))</td>
+                        <td class="align-middle text-nowrap">
+                            <a class="text-success" asp-controller="Order" asp-action="AddItemToShoppingCart"      asp-route-id="@cartItem.Product.Id"><i class="bi bi-cart-plus"></i></a>
+                            <a class="text-danger"  asp-controller="Order" asp-action="RemoveItemFromShoppingCart" asp-route-id="@cartItem.Product.Id"><i class="bi bi-cart-dash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td><b> Total: </b></td>
+                    <td>
+                        @Model.ShoppingCartTotal.ToString("c") @*Esto por la forma de escribir el dinero diferente en cada pais*@
+                        <input type="hidden" id="total" value="@Model.ShoppingCartTotal"/>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="col">
+        <img src="http://localhost/images/pexels-karolina-grabowska-5632382.jpg" style="width: 80%;"/>
+    </div> 
+</div>
+
+<div style="text-align: justify;, width: 800px;">
+    <br/><br/>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+        Maecenas pretium nunc at nisi luctus, tincidunt sagittis diam condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut faucibus diam quis velit eleifend scelerisque. Praesent commodo erat non ante luctus, et tristique justo ullamcorper. Donec eu neque vel libero semper aliquet sit amet eu mi. Fusce at magna in magna elementum fermentum non sit amet leo. Nam ac massa luctus, porta felis sagittis, efficitur neque. Phasellus et euismod neque.<br/>
+        Proin porttitor metus eu lectus tristique facilisis. Mauris laoreet condimentum velit, ac sagittis orci laoreet a. Praesent et arcu et lectus mattis lacinia. Vestibulum bibendum elit in tempor efficitur. Phasellus sed orci placerat, faucibus nibh a, lacinia augue. Etiam vel velit rhoncus, malesuada felis quis, rhoncus risus. Maecenas odio sapien, efficitur a porta vitae, pulvinar vitae enim. Quisque aliquet imperdiet vestibulum. Nullam consequat dolor fringilla accumsan congue. Proin ullamcorper odio nec semper vehicula. Fusce elit quam, pulvinar tristique dapibus sed, pulvinar ut nibh. Nullam at posuere velit. Pellentesque ut velit condimentum, auctor neque a, varius ligula. Mauris placerat dui tortor, vitae accumsan turpis convallis congue. Sed ullamcorper egestas eleifend. Sed nec dui quam.<br/>
+        Etiam vel sodales augue. Vestibulum blandit, massa eu volutpat tincidunt, purus nisi commodo dolor, a fringilla elit ante quis est. Aliquam eget urna odio. Integer dui ante, laoreet sit amet aliquam a, vehicula eget erat. Aenean felis massa, rutrum ut ante vel, dignissim ultricies mauris. Nam laoreet erat augue, in egestas felis tempus at. Curabitur mattis justo fringilla sodales commodo. Mauris rhoncus, lectus in rutrum hendrerit, lectus purus laoreet elit, a sagittis ex velit at leo. Aliquam suscipit posuere risus ut euismod. Donec nec libero felis. Ut tellus dolor, ornare non placerat et, laoreet consectetur ante. Nullam sed erat mi. Phasellus gravida urna nulla, at tincidunt felis suscipit ut. Donec aliquam ac sapien eget convallis. Vivamus id feugiat eros.<br/>
+        Phasellus dolor velit, aliquet nec elit id, condimentum consectetur ligula. Nunc lacinia nulla in erat elementum consequat. Nunc consequat libero et nisi pretium, vel auctor ex egestas. Pellentesque pretium, urna eget scelerisque viverra, ex elit varius nulla, ut mollis sem enim id dolor. Ut ornare consectetur ultrices. Etiam et condimentum augue. Etiam nec justo vehicula, semper ante sed, porttitor est. Phasellus rutrum euismod bibendum. Etiam cursus cursus lectus, et tincidunt massa pellentesque vitae. Nullam ipsum libero, laoreet nec laoreet ut, imperdiet a elit. Ut sed lectus viverra, varius arcu quis, interdum mi. Pellentesque vitae malesuada turpis, vel cursus nisl.<br/>
+    </p>
+    <br/><br/>
+</div>
+
+<div class="text-center">
+    <div class="btn-group">
+        @*<a class="btn btn-outline-primary" asp-controller="Order" asp-action="CompleteOrder">Complete Order</a>*@
+        @*<span style="padding: 5px;"></span>*@
+        <div id="paypal-btn"></div>
+        <span style="padding: 5px;"></span>
+        <a class="btn btn-outline-success" asp-controller="Product" asp-action="Index">Add More</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script>
+        var _total = parseFloat($("#total").val().replace(",","."));
+
+        paypal.Button.render({
+            env: 'sandbox',
+            client: {
+                sandbox: 'ARz8TSOFYFcHq-XhOQO_zRQYu1pZuf8ogDn5wm8cEVtZxY3hkUTW099h77nmO8KRdLotASh1Z1g833hr',
+            },
+            locale: 'en_US',
+            style: {
+                size: 'small',
+                color: 'gold',
+                shape: 'pill'
+            },
+            commit: true,
+            payment: function (data, actions){
+                return actions.payment.create({
+                    transactions: [{
+                        amount:{
+                            total: _total,
+                            currency:'USD'
+                        }
+                    }]
+                });
+            },
+            onAuthorize: function (data, actions){
+                return actions.payment.execute().then(function(){
+                    var url = '@Url.Action("CompleteOrder","Order", new{ })'
+                    window.location.href = url;
+                });
+            }
+        }, '#paypal-btn');
+    </script>
+}

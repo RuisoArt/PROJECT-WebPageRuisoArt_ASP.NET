@@ -1,0 +1,134 @@
+@model IEnumerable<Product>
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div>
+    <h1 class="text-center">Product List</h1>
+    <br/>
+</div>
+
+<div class="row row-cols-0 row-cols-md-4 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-white-center bg-info">
+                    <p class="">@item.name
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i></a>
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                    </p>
+                </div>  
+            
+
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <img src="@item.image" alt="@item.name" class="card-img-top" alt="...">
+                </a>
+
+                <div class="card-body">
+                    @*Aqui va lo De Item*@
+                    <p class="card-text small">
+                        @if(item.description.Length <= 250){
+                            @item.description
+                        }else{
+                            @item.description.Substring(0,250)
+                        } ...
+                    </p>
+                    <p class="card-text small">
+                        <i class="bi bi-sort-numeric-up-alt"></i>   <b> Quantity: </b>         @item.quantity       <br/>
+                        <i class="bi bi-car-front"></i>             <b> Shipping : </b>        @item.shoppingWay    <br/>
+                        <i class="bi bi-calendar-check"></i>        <b> Date: </b>             @item.creationDate   <br/>
+                        <i class="bi bi-eyedropper"></i>            <b> Color: </b>            @item.color          <br/>
+                        <i class="bi bi-cup-hot"></i>               <b> Size Cup: </b>         @item.sizeCup        <br/>
+                        <i class="bi bi-bookmark"></i>              <b> Model Clothes: </b>    @item.modelClothes   <br/>
+                        <i class="bi bi-journals"></i>              <b> Size Notepad: </b>     @item.sizeNotepad    <br/>
+                        <i class="bi bi-check2-square"></i>         <b> Status: </b>           @item.status         <br/>
+                        <i class="bi bi-card-image"></i>            <b> Size Print: </b>       @item.sizePrint      <br/>
+                        <i class="bi bi-book"></i>                  <b> Book Marker: </b>      @item.sizeBookMarker <br/>
+                        <i class="bi bi-dice-5"></i>                <b> Rol Dice: </b>         @item.rolDice        <br/>
+                    </p>
+                    
+                </div>
+
+                <div class="card-footer center">
+                    <p class="card-text text-center">
+                        <p class="card-text small text-center">
+                            <i class="bi bi-currency-dollar"></i> <b> Price: </b> @item.price <br/>
+                            <i class="bi bi-tag"></i>             <b> Tax: </b>   @item.tax <br/>
+                        </p>
+                        @*El Boton de Compra*@
+                        <a class="btn btn-success text-white btn-sm" 
+                            asp-controller="Order" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id">
+
+                            <i class="bi bi-cart-plus"></i> 
+                            Add to Cart! <br/> Price: @item.price.ToString("c")
+                            <br/>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+
+</div>
+<div>
+    <div style="text-align: justify;">
+        <br/><br/><br/><br/>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Maecenas pretium nunc at nisi luctus, tincidunt sagittis diam condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut faucibus diam quis velit eleifend scelerisque. Praesent commodo erat non ante luctus, et tristique justo ullamcorper. Donec eu neque vel libero semper aliquet sit amet eu mi. Fusce at magna in magna elementum fermentum non sit amet leo. Nam ac massa luctus, porta felis sagittis, efficitur neque. Phasellus et euismod neque.<br/>
+            Proin porttitor metus eu lectus tristique facilisis. Mauris laoreet condimentum velit, ac sagittis orci laoreet a. Praesent et arcu et lectus mattis lacinia. Vestibulum bibendum elit in tempor efficitur. Phasellus sed orci placerat, faucibus nibh a, lacinia augue. Etiam vel velit rhoncus, malesuada felis quis, rhoncus risus. Maecenas odio sapien, efficitur a porta vitae, pulvinar vitae enim. Quisque aliquet imperdiet vestibulum. Nullam consequat dolor fringilla accumsan congue. Proin ullamcorper odio nec semper vehicula. Fusce elit quam, pulvinar tristique dapibus sed, pulvinar ut nibh. Nullam at posuere velit. Pellentesque ut velit condimentum, auctor neque a, varius ligula. Mauris placerat dui tortor, vitae accumsan turpis convallis congue. Sed ullamcorper egestas eleifend. Sed nec dui quam.<br/>
+            Etiam vel sodales augue. Vestibulum blandit, massa eu volutpat tincidunt, purus nisi commodo dolor, a fringilla elit ante quis est. Aliquam eget urna odio. Integer dui ante, laoreet sit amet aliquam a, vehicula eget erat. Aenean felis massa, rutrum ut ante vel, dignissim ultricies mauris. Nam laoreet erat augue, in egestas felis tempus at. Curabitur mattis justo fringilla sodales commodo. Mauris rhoncus, lectus in rutrum hendrerit, lectus purus laoreet elit, a sagittis ex velit at leo. Aliquam suscipit posuere risus ut euismod. Donec nec libero felis. Ut tellus dolor, ornare non placerat et, laoreet consectetur ante. Nullam sed erat mi. Phasellus gravida urna nulla, at tincidunt felis suscipit ut. Donec aliquam ac sapien eget convallis. Vivamus id feugiat eros.<br/>
+            Phasellus dolor velit, aliquet nec elit id, condimentum consectetur ligula. Nunc lacinia nulla in erat elementum consequat. Nunc consequat libero et nisi pretium, vel auctor ex egestas. Pellentesque pretium, urna eget scelerisque viverra, ex elit varius nulla, ut mollis sem enim id dolor. Ut ornare consectetur ultrices. Etiam et condimentum augue. Etiam nec justo vehicula, semper ante sed, porttitor est. Phasellus rutrum euismod bibendum. Etiam cursus cursus lectus, et tincidunt massa pellentesque vitae. Nullam ipsum libero, laoreet nec laoreet ut, imperdiet a elit. Ut sed lectus viverra, varius arcu quis, interdum mi. Pellentesque vitae malesuada turpis, vel cursus nisl.<br/>
+        </p>
+        <br/><br/>
+    </div>
+
+    <div>
+       <h3 class="text-center">Commissions!</h3><br/>
+        <div class="container">
+            <div class="contact">
+                <section class="extra">
+                    <h1 class="Text_contact">Ruiso Art Page</h1>
+                </section>
+                
+                <section class="myFtexts">
+                    <h1 class="Text_contact">Open Commission</h1>
+                </section>
+
+                <section class="extra">
+                    <h1 class="Text_contact">Open Art Commissions, ask for yours now!</h1>
+                </section>
+
+                <section class="extra">
+                    <a class="btn btn-light" asp-controller="Commission" asp-action="Create" style="width: 200px">
+                        <i class="bi bi-suit-heart-fill"></i>
+                        Order Now!
+                    </a>
+                </section>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <div>
+        <br/>
+        <p class="text-center" style="font-size: 7px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+        </p>
+    </div>
+</div>
+
+@await Html.PartialAsync("_CreateItem", "Product")
+

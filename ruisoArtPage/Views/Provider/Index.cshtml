@@ -1,0 +1,113 @@
+@model IEnumerable<Provider>
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@{
+    ViewData["Title"] = "Provider List";
+}
+
+
+<div class="row">
+    <h1 class="text-center">Provider List</h1>
+    <div class="col-md-15 offset-md-0">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        @Html.DisplayNameFor(m => m.image)
+                    </th>
+                    <th>
+                        @Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.name),
+                            "Index",
+                            new { sortOn = "name", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>
+                        @Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.description),
+                            "Index",
+                            new { sortOn = "description", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>
+                        @Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.phone),
+                            "Index",
+                            new { sortOn = "phone", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>
+                        @Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.link),
+                            "Index",
+                            new { sortOn = "link", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>
+                        @Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.email),
+                            "Index",
+                            new { sortOn = "email", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @*@foreach (var item in Model)*@
+                @foreach (var item in ViewBag.providers)
+                {
+                    <tr class="text-center">
+                        <!-- Aqui van los elementos -->
+                        <td class="text-center">
+                            <img class="rounded-circle" src="@item.image" alt="@item.name" style="width:100px"/>
+                        </td>
+
+                        <td class="text-start small">@item.name</td>
+                        <td class="text-start small">@item.description</td>
+                        <td class="text-start small">@item.phone</td>
+                        <td class="text-start small">@item.link</td>
+                        <td class="text-start small">@item.email</td>
+
+                        <!-- Aqui van las acciones CRUD -->
+                        <td class="text-start d-flex">
+                            <a class="btn btn-outline-primary btn-sm col-5" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+                            <a class="btn btn-outline-info btn-sm col-5" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> Details</a>
+                            <a class="btn btn-danger text-white btn-sm col-5" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+                <div class="row">
+                    <div class="pagination pagination-sm justify-content-center">
+                        @Html.PagedListPager(
+                            (IPagedList)ViewBag.providers,
+                            page => Url.Action(
+                                "Index",
+                                "Provider",
+                                new
+                                {
+                                    page,
+                                    sortOn = ViewBag.SortOn,
+                                    orderBy = ViewBag.OrderBy,
+                                    pSortOn = ViewBag.SortOn
+                                }
+                                ),
+                            new PagedListRenderOptions()
+                            {
+                                UlElementClasses = new[] { "pagination" },
+                                ContainerDivClasses = new[] { "pagination-container" },
+                                LiElementClasses = new string[] { "page-item" },
+                                PageClasses = new string[] { "page-link" }
+                            }
+                            )
+                    </div>
+                </div>
+
+            </tbody>
+            <tfoot>
+                @await Html.PartialAsync("_CreateItem", "Provider")
+            </tfoot>
+        </table>    
+    </div>
+</div>

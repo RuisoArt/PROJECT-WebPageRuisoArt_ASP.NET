@@ -1,0 +1,145 @@
+@model Item
+
+@{
+    ViewData["Title"] = "Details for " + Model.name;
+}
+
+<div>
+    <h1 class="text-center">Details<br/>@Model.name</h1> <br/> <br/>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="form-group text-center mt-3">
+                    <img src="@Model.image" style="width: 350px"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="col-md-8 offset-md-1">           
+
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <textarea  asp-for="description" class="form-control" readonly></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="price" class="control-label"></label>
+                        <input asp-for="price" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="tax" class="control-label"></label>
+                        <input asp-for="tax" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="quantity" class="control-label"></label>
+                        <input asp-for="quantity" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="shoppingWay" class="control-label"></label>
+                        <textarea  asp-for="shoppingWay" class="form-control" readonly></textarea>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="col">
+                <div class="col-md-8 offset-md-1">           
+
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <textarea  asp-for="description" class="form-control" readonly></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="price" class="control-label"></label>
+                        <input asp-for="price" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="tax" class="control-label"></label>
+                        <input asp-for="tax" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="quantity" class="control-label"></label>
+                        <input asp-for="quantity" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="shoppingWay" class="control-label"></label>
+                        <textarea  asp-for="shoppingWay" class="form-control" readonly></textarea>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+    </div>
+
+</div>
+
+<div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-white-center bg-info">
+                    <p class="">@Model.name</p>
+                </div>  
+            
+
+                <a asp-action="Details" asp-route-id="@Model.Id">
+                    <img src="@Model.image" alt="@Model.name" class="card-img-top" alt="...">
+                </a>
+
+                <div class="card-body">
+                    @*Aqui va lo De Item*@
+                    <p class="card-text small">@Model.description</p>
+                    <p class="card-text small">
+                        <i class="bi bi-sort-numeric-up-alt"></i>   <b> Quantity: </b>     @Model.quantity      <br/>
+                        <i class="bi bi-car-front"></i>             <b> Shipping : </b>    @Model.shoppingWay   <br/>
+                        <i class="bi bi-currency-dollar"></i>       <b> Price: </b>        @Model.price         <br/>
+                        <i class="bi bi-tag"></i>                   <b> Tax: </b>          @Model.tax           <br/>
+                    </p>
+                    @*Aqui va lo De Producto*@
+                </div>
+
+                <div class="row">
+                    <p class="card-text small">
+                        <b> Product: </b>
+                        <hr />
+                        @foreach (var item in Model.myTypes)
+                        {
+                            <div class="col-md-4 text-center">
+                                @item.Products.Capacity
+                            </div>
+                        }
+                    </p>
+                </div>
+
+                <div class="card-footer center">
+                    <p class="card-text text-center">
+                        <p class="card-text small text-center">
+                            
+                        </p>
+                        
+                        <a class="btn btn-success text-white btn-sm">
+                            <i class="bi bi-cart-plus"></i> 
+                            Add to Cart (Price @Model.price.ToString("c"))
+                            <br/>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+</div>
+</div>
+
+

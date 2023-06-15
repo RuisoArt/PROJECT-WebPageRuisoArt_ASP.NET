@@ -1,0 +1,97 @@
+@model Commission
+
+@{
+    ViewData["Title"] = "Create for Commission";
+}
+<div>
+    <h1 class="text-center">Create a new Commision</h1> <br/>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    
+                    <div class="form-group">
+                        <label asp-for="Tittle" class="control-label"></label>
+                        <input asp-for="Tittle" class="form-control" />
+                        <span asp-validation-for="Tittle" class="text-danger"></span>
+                    </div>                    
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <textarea  asp-for="description" class="form-control" ></textarea>
+                        <span asp-validation-for="description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AproxPrice" class="control-label"></label>
+                        <input asp-for="AproxPrice" class="form-control" />
+                        <span asp-validation-for="AproxPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PersonName" class="control-label"></label>
+                        <input asp-for="PersonName" class="form-control" />
+                        <span asp-validation-for="PersonName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PersonLastName" class="control-label"></label>
+                        <input  asp-for="PersonLastName" class="form-control"  />
+                        <span asp-validation-for="PersonLastName" class="text-danger"></span>
+                    </div>
+                    @*
+                    <div class="form-group">
+                        <label asp-for="TypeId" class="control-label"></label>
+                        <input  asp-for="TypeId" class="form-control"  />
+                        <span asp-validation-for="TypeId" class="text-danger"></span>
+                    </div>*@
+
+                    <div class="form-group">
+                        <label asp-for="ImageReference" class="control-label"></label>
+                        <input asp-for="ImageReference" class="form-control" id="Photo" />
+                        <span asp-validation-for="ImageReference" class="text-danger"></span>
+                    </div>
+                    @*
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Not function</label>
+                    </div>*@
+                    <div class="form-group text-center mt-3">
+                        <img src="" style="width: 350px" id="PhotoPreview"/>
+                        <!--pendiente-->
+                    </div>
+                    
+                
+            </form>
+            <div class="position-relative">
+                <h3 class="text-center" style="font-size: 20px">Price list for art commissions!</h3>
+                <a href="#">
+                    <img src="http://localhost/images/pdf.png" style="width: 70px" class="position-absolute top-80 start-50"/>
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="http://localhost/images/pexels-cottonbro-studio-4709828.jpg" style="width: 500px"/>
+        </div>
+    </div>
+</div>
+<div class="form-group mt-2">
+    <input type="submit" class="btn btn-outline-success float-end" value="Create New Commission" />
+    <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+</div>
+
+@section Scripts
+{
+    <script>
+        var output = document.getElementById('PhotoPreview');
+        $(document).ready(function () {
+            output.src = $('#Photo').val();
+        })
+        $("#Photo").on("change", function () {
+            output.src = $(this).val();
+        })
+    </script>
+}

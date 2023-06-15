@@ -1,0 +1,74 @@
+@model IEnumerable<Item>
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@{
+    ViewData["Title"] = "Item List";
+}
+<div>
+    <h1 class="text-center">Items List</h1>
+    <br/>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-white-center bg-info">
+                    <p class="">@item.name
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i></a>
+                        <a class="text-white float-end mx-sm-1 my-sm-0" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                    </p>
+                </div>  
+            
+
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <img src="@item.image" alt="@item.name" class="card-img-top" alt="...">
+                </a>
+
+                <div class="card-body">
+                    @*Aqui va lo De Item*@
+                    <p class="card-text small">
+                        @if(item.description.Length <= 250){
+                            @item.description
+                        }else{
+                            @item.description.Substring(0,250)
+                        } ...
+                    </p>
+                    <p class="card-text small">
+                        <i class="bi bi-sort-numeric-up-alt"></i><b> Quantity: </b>  @item.quantity      <br/>
+                        <i class="bi bi-car-front"></i><b> Shipping : </b>           @item.shoppingWay   <br/>
+                    </p>
+                    @*
+                    <b>Type: </b>@item.myTypes.name
+                    <b>Season: </b>
+                    <i class="bi bi-hand-thumbs-up"></i><b>Status: </b> @item.Products.status
+                    *@
+                </div>
+
+                <div class="card-footer center">
+                    <p class="card-text text-center">
+                        <p class="card-text small text-center">
+                            <i class="bi bi-currency-dollar"></i> <b> Price: </b> @item.price <br/>
+                            <i class="bi bi-tag"></i>             <b> Tax: </b>   @item.tax <br/>
+                        </p>
+                        
+                        <a class="btn btn-success text-white btn-sm">
+                            <i class="bi bi-cart-plus"></i> 
+                            Add to Cart (Price @item.price.ToString("c"))
+                            <br/>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+@await Html.PartialAsync("_CreateItem", "Item")
+
+
+
+   

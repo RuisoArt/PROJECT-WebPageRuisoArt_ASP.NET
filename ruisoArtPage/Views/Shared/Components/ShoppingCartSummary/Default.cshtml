@@ -1,0 +1,12 @@
+@using ruisoArtPage.Data.ViewComponents;
+
+@model int
+
+@if(Model > 0){
+    <li class="nav-item">
+        <a class="nav-link text-white" asp-area="" asp-controller="Order" asp-action="ShoppingCart">
+            <img src="http://localhost/images/carts.png" style="width: 50px;"/>
+            <button type="button-circle" class="btn btn-danger">@Model</button>
+        </a>
+    </li>
+}

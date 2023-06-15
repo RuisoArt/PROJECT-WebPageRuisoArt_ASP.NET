@@ -1,0 +1,60 @@
+@model Item
+
+@{
+    ViewData["Title"] = "Delete" + Model.name;
+}
+
+<div>
+    <h1 class="text-center">Delete<br/>@Model.name</h1>
+
+    <div class="container text-center">
+        <form asp-action="Delete">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group text-center mt-3">
+                        <img src="@Model.image" style="width: 350px"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-1">           
+
+                        <div class="form-group">
+                            <label asp-for="name" class="control-label"></label>
+                            <input asp-for="name" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="description" class="control-label"></label>
+                            <textarea  asp-for="description" class="form-control" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="price" class="control-label"></label>
+                            <input asp-for="price" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="tax" class="control-label"></label>
+                            <input asp-for="tax" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="quantity" class="control-label"></label>
+                            <input asp-for="quantity" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="shoppingWay" class="control-label"></label>
+                            <textarea  asp-for="shoppingWay" class="form-control" readonly></textarea>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <input type ="hidden" asp-for="@Model.Id"/>
+                <input type="submit" class="btn btn-danger text-while float-end" value="Confirm"/>
+                <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+
+

@@ -1,0 +1,122 @@
+using Microsoft.AspNetCore.Mvc;
+using ruisoArtPage.Data;
+using ruisoArtPage.Models;
+using X.PagedList;
+using X.PagedList.Mvc.Core;
+using X.PagedList.Web.Common;
+
+namespace ruisoArtPage.Controllers{
+    public class ItemController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+
+        public ItemController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        //-------------------------------------------------------------- INDEX
+        /*public IActionResult Index()        {
+            var allItems = _context.Item.ToList();
+            return View(allItems);
+        }*/
+        public IActionResult Index(string sortOn, string orderBy, string pSortOn, int? page){
+            int recordsPerPage = 2;
+            if (!page.HasValue) {
+                page = 1;
+                orderBy = string.IsNullOrWhiteSpace(orderBy) || orderBy.Equals("asc") ? "desc" : "asc";
+            } if (!string.IsNullOrWhiteSpace(sortOn) && !sortOn.Equals(pSortOn, StringComparison.CurrentCultureIgnoreCase)){
+                orderBy = "asc";
+            }
+
+            ViewBag.OrderBy = orderBy;
+            ViewBag.SortOn = sortOn;
+            var data = _context.Item.AsQueryable();
+            switch (sortOn) {
+                // name, description, image, price, tax, quantity, shoppingWay
+                case "name":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.name) : data.OrderByDescending(i => i.name);
+                    break;
+                case "description":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.description) : data.OrderByDescending(i => i.description);
+                    break;
+                case "price":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.price) : data.OrderByDescending(i => i.price);
+                    break;
+                case "tax":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.tax) : data.OrderByDescending(i => i.tax);
+                    break;
+                case "quantity":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.quantity) : data.OrderByDescending(i => i.quantity);
+                    break;
+                case "shoppingWay":
+                    data = orderBy.Equals("asc") ? data.OrderBy(i => i.shoppingWay) : data.OrderByDescending(i => i.shoppingWay);
+                    break;
+                default:
+                    data = data.OrderBy(i => i.Id);
+                    break;
+            }
+
+            ViewBag.items = data.ToPagedList(page.Value, recordsPerPage);
+            return View(data);
+        }
+
+        //-------------------------------------------------------------- DETAILS
+        public IActionResult Details(int id)        {
+            var data = _context.Item.FirstOrDefault(a => a.Id == id);
+            if (data == null){
+                return View("NotFound");
+            }
+            return View(data);
+        }
+        //-------------------------------------------------------------- EDIT
+        public IActionResult Edit(int id){
+            var data = _context.Item.FirstOrDefault(a => a.Id == id);
+            if (data == null){
+                return View("NotFound");
+            }
+            return View(data);
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, 
+        [Bind("Id, name, description, image, price, tax, quantity, shoppingWay")] Item data){
+            if(!ModelState.IsValid){
+                return View(data);
+            }
+            if(id == data.Id){
+                _context.Item.Update(data);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(data);
+        }
+        //-------------------------------------------------------------- DELETE
+        public IActionResult Delete(int id){
+            var data = _context.Item.FirstOrDefault(a => a.Id == id);
+            return View(data);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int id){
+            var data = _context.Item.FirstOrDefault(a=> a.Id == id);
+            if(data == null) return View("NotFound");
+            _context.Item.Remove(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //-------------------------------------------------------------- CREATE
+        public IActionResult Create(){
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create([Bind("name, description, image, price, tax, quantity, shoppingWay")] Item data){
+            if(!ModelState.IsValid){
+                return View(data);
+            }
+
+            _context.Item.Add(data);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
+    }
+}

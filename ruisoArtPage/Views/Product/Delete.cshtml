@@ -1,0 +1,140 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Delete Product" + Model.creationDate;
+}
+<div>
+    <h1 class="text-center">Delete<br/>@Model.creationDate</h1>
+
+    <div class="container text-center">
+        <form asp-action="Delete">
+            <div class="row">
+                @*columnas que eran de item*@
+                <div class="col">
+                    <div class="form-group text-center mt-3">
+                        <img src="@Model.image" style="width: 350px"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-1">           
+
+                        <div class="form-group">
+                            <label asp-for="name" class="control-label"></label>
+                            <input asp-for="name" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="description" class="control-label"></label>
+                            <textarea  asp-for="description" class="form-control" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="price" class="control-label"></label>
+                            <input asp-for="price" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="tax" class="control-label"></label>
+                            <input asp-for="tax" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="quantity" class="control-label"></label>
+                            <input asp-for="quantity" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="shoppingWay" class="control-label"></label>
+                            <textarea  asp-for="shoppingWay" class="form-control" readonly></textarea>
+                        </div>
+                    
+                    </div>
+                </div>
+                @*columnas que son de product*@
+                <div class="col">
+                    <div class="form-group">
+                            <label asp-for="creationDate" class="control-label"></label>
+                            <input asp-for="creationDate" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="externalLink" class="control-label"></label>
+                            <input asp-for="externalLink" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="nftLink" class="control-label"></label>
+                            <input asp-for="nftLink" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="color" class="control-label"></label>
+                            <input asp-for="color" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizeCup" class="control-label"></label>
+                            <input asp-for="sizeCup" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="modelClothes" class="control-label"></label>
+                            <input asp-for="modelClothes" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizeClothes" class="control-label"></label>
+                            <input asp-for="sizeClothes" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizeNotepad" class="control-label"></label>
+                            <input asp-for="sizeNotepad" class="form-control" readonly/>
+                        </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-1">           
+
+                        <div class="form-group">
+                            <label asp-for="season" class="control-label"></label>
+                            <input asp-for="season" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="status" class="control-label"></label>
+                            <input asp-for="status" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizePrint" class="control-label"></label>
+                            <input asp-for="sizePrint" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizePaper" class="control-label"></label>
+                            <input asp-for="sizePaper" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="formatImage" class="control-label"></label>
+                            <input asp-for="formatImage" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizeBookMarker" class="control-label"></label>
+                            <input asp-for="sizeBookMarker" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="rolDice" class="control-label"></label>
+                            <input asp-for="rolDice" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="sizeDice" class="control-label"></label>
+                            <input asp-for="sizeDice" class="form-control" readonly/>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="TypeId" class="control-label"></label>
+                            <input asp-for="TypeId" class="form-control" readonly/>
+                        </div>*@
+                        <div class="form-group">
+                            <label asp-for="ProviderId" class="control-label"></label>
+                            <input asp-for="ProviderId" class="form-control" readonly/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <input type ="hidden" asp-for="@Model.Id"/>
+                <input type="submit" class="btn btn-danger text-while float-end" value="Confirm"/>
+                <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+

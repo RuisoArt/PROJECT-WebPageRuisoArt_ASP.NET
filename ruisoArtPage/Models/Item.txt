@@ -1,0 +1,38 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ruisoArtPage.Models{
+
+    public class Item{
+        [Key]
+        public int Id { get; set; }
+[Required]
+[Display(Name = "Name")]
+        public string name { get; set; }
+[Required]
+[StringLength(150, ErrorMessage = "Text so long! 150 char max", MinimumLength = 3 )]
+[Display(Name = "Description")]
+        public string description { get; set; }
+[Display(Name = "Image")]
+        public string image { get; set; }
+[Range(0, 999999.999)]
+[Display(Name = "Price")]
+        public double price { get; set; }
+[Range(0,1.0)]
+[Display(Name = "Tax")]
+        public double tax { get; set; }
+[Range(0,100)]
+[Display(Name = "Quantity")]
+        public int quantity { get; set; }
+[Display(Name = "Shopping Way")]
+        public string shoppingWay { get; set; }
+        //******************-----RELATIONSHIP-----************************************************
+        public List<MyType> myTypes { get; set; }
+        /*
+        public int TypeId { get; set; }
+        [ForeignKey("TypeId")]
+        public MyType MyType { get; set; }
+        */
+    }
+    
+}

@@ -1,0 +1,186 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Details for Product" + Model.name;
+}
+
+<div>
+    <h1 class="text-center">Details Product:<br/>@Model.name</h1>
+    <br/>
+    <div class="container text-left">
+        <div class="row">
+
+            <div class="col">
+                <div class="form-group text-center mt-3">
+                    <img src="@Model.image" style="width: 550px"/>
+                </div>
+            </div>
+            <div class="col">
+                <p class="card-text toll" style="font-size: 25px;">
+                    <i class="bi bi-card-checklist"></i>        <b> Name: </b>             @Model.name           <br/>
+                    <i class="bi bi-box"></i>                   <b> Description: </b>      @Model.description    <br/>
+                    <i class="bi bi-sort-numeric-up-alt"></i>   <b> Quantity: </b>         @Model.quantity       <br/>
+                    <i class="bi bi-car-front"></i>             <b> Shipping : </b>        @Model.shoppingWay    <br/>
+                    <i class="bi bi-calendar-check"></i>        <b> Date: </b>             @Model.creationDate   <br/>
+                    <i class="bi bi-eyedropper"></i>            <b> Color: </b>            @Model.color          <br/>
+                    <i class="bi bi-cup-hot"></i>               <b> Size Cup: </b>         @Model.sizeCup        <br/>
+                    <i class="bi bi-bookmark"></i>              <b> Model Clothes: </b>    @Model.modelClothes   <br/>
+                    <i class="bi bi-journals"></i>              <b> Size Notepad: </b>     @Model.sizeNotepad    <br/>
+                    <i class="bi bi-check2-square"></i>         <b> Status: </b>           @Model.status         <br/>
+                    <i class="bi bi-card-image"></i>            <b> Size Print: </b>       @Model.sizePrint      <br/>
+                    <i class="bi bi-book"></i>                  <b> Book Marker: </b>      @Model.sizeBookMarker <br/>
+                    <i class="bi bi-dice-5"></i>                <b> Rol Dice: </b>         @Model.rolDice        <br/>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+
+        <a class="btn btn-success text-white btn-sm" style="font-size: 30px; , align: center" 
+            asp-controller="Order" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id">
+            <i class="bi bi-cart-plus"></i> 
+            Add to Cart!<br/>
+             Price: @Model.price.ToString("c")
+            <br/>
+        </a>
+    </div>
+    <div style="text-align: justify;">
+        <br/><br/>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Maecenas pretium nunc at nisi luctus, tincidunt sagittis diam condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut faucibus diam quis velit eleifend scelerisque. Praesent commodo erat non ante luctus, et tristique justo ullamcorper. Donec eu neque vel libero semper aliquet sit amet eu mi. Fusce at magna in magna elementum fermentum non sit amet leo. Nam ac massa luctus, porta felis sagittis, efficitur neque. Phasellus et euismod neque.<br/>
+            Proin porttitor metus eu lectus tristique facilisis. Mauris laoreet condimentum velit, ac sagittis orci laoreet a. Praesent et arcu et lectus mattis lacinia. Vestibulum bibendum elit in tempor efficitur. Phasellus sed orci placerat, faucibus nibh a, lacinia augue. Etiam vel velit rhoncus, malesuada felis quis, rhoncus risus. Maecenas odio sapien, efficitur a porta vitae, pulvinar vitae enim. Quisque aliquet imperdiet vestibulum. Nullam consequat dolor fringilla accumsan congue. Proin ullamcorper odio nec semper vehicula. Fusce elit quam, pulvinar tristique dapibus sed, pulvinar ut nibh. Nullam at posuere velit. Pellentesque ut velit condimentum, auctor neque a, varius ligula. Mauris placerat dui tortor, vitae accumsan turpis convallis congue. Sed ullamcorper egestas eleifend. Sed nec dui quam.<br/>
+            Etiam vel sodales augue. Vestibulum blandit, massa eu volutpat tincidunt, purus nisi commodo dolor, a fringilla elit ante quis est. Aliquam eget urna odio. Integer dui ante, laoreet sit amet aliquam a, vehicula eget erat. Aenean felis massa, rutrum ut ante vel, dignissim ultricies mauris. Nam laoreet erat augue, in egestas felis tempus at. Curabitur mattis justo fringilla sodales commodo. Mauris rhoncus, lectus in rutrum hendrerit, lectus purus laoreet elit, a sagittis ex velit at leo. Aliquam suscipit posuere risus ut euismod. Donec nec libero felis. Ut tellus dolor, ornare non placerat et, laoreet consectetur ante. Nullam sed erat mi. Phasellus gravida urna nulla, at tincidunt felis suscipit ut. Donec aliquam ac sapien eget convallis. Vivamus id feugiat eros.<br/>
+            Phasellus dolor velit, aliquet nec elit id, condimentum consectetur ligula. Nunc lacinia nulla in erat elementum consequat. Nunc consequat libero et nisi pretium, vel auctor ex egestas. Pellentesque pretium, urna eget scelerisque viverra, ex elit varius nulla, ut mollis sem enim id dolor. Ut ornare consectetur ultrices. Etiam et condimentum augue. Etiam nec justo vehicula, semper ante sed, porttitor est. Phasellus rutrum euismod bibendum. Etiam cursus cursus lectus, et tincidunt massa pellentesque vitae. Nullam ipsum libero, laoreet nec laoreet ut, imperdiet a elit. Ut sed lectus viverra, varius arcu quis, interdum mi. Pellentesque vitae malesuada turpis, vel cursus nisl.<br/>
+        </p>
+        <br/><br/>
+    </div>
+
+    <div>
+        <setion class="portafolio">
+            <div class="container">
+                <h2 class="titulo text-center">Other Products</h2><br/>
+                <div class="galeria-port">
+
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img12.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img35.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/dibujo.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img32.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img3.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img4.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img5.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="imagen-port">
+                        <a asp-controller="Product" asp-action="Index">
+                            <img src="http://localhost/images/merch/img17.png"/>
+                            <div class="hover-galeria">
+                                <img src="http://localhost/images/check.png" />
+                                <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </setion>   
+    </div>
+    
+    <div>
+       <h3 class="text-center">Commissions!</h3><br/>
+        <div class="container">
+            <div class="contact">
+                <section class="extra">
+                    <h1 class="Text_contact">Ruiso Art Page</h1>
+                </section>
+                
+                <section class="myFtexts">
+                    <h1 class="Text_contact">Open Commission</h1>
+                </section>
+
+                <section class="extra">
+                    <h1 class="Text_contact">Open Art Commissions, ask for yours now!</h1>
+                </section>
+
+                <section class="extra">
+                    <a class="btn btn-light" asp-controller="Commission" asp-action="Create" style="width: 200px">
+                        <i class="bi bi-suit-heart-fill"></i>
+                        Order Now!
+                    </a>
+                </section>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <div>
+        <br/>
+        <p class="text-center" style="font-size: 7px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+        </p>
+    </div>
+
+</div>
+
+

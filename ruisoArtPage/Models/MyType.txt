@@ -1,0 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using ruisoArtPage.Data.Enum;
+
+namespace ruisoArtPage.Models{
+
+    public class MyType{
+        [Key]
+        public int Id { get; set; }
+        public ListTypes name { get; set; }
+        //******************-----RELATIONSHIP-----********************
+        public List<Commission> Commissions { get; set; }
+        public List<Product> Products { get; set; }
+        
+    }
+    
+}

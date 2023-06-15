@@ -1,0 +1,286 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*About us*@
+<div>
+    <section class="contenedor about-us">
+        <br/><h2 class="text-center">Artist: RuisoArt / OnRuisoArt <br/>[//]</h2><br/>
+        <div class="contenedor-sobre-nosotros">
+            <img class="img-about-us-foto" src="http://localhost/images/pexels-nitin-khajotia-1516680.jpg" alt=""/>
+            <div class="contenido-textos">
+                <h3><span>//</span>Who is Ruiso?</h3>
+                <h3><span>//</span>Who is Luis Felipe Narvaez Gomez?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+@*Los materiales que uso*@
+<div>
+    <br/><br/><br/><br/><br/><h3 class="text-center"><b>The materials that I use!</b></h3><br/>
+    <section class="portafolio">
+        <div class="container">
+            <div class="galeria-port">
+                <div class="imagen-port-2">
+                    <a href="https://xppentienda.com/producto/artist-12-pro/">
+                        <img src="http://localhost/images/xppen-artist-12-pro-01.jpg"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p class="text-center"><b style="text-decoration-line: underline;">XP-PEN<br/>Artist 12 Pro<br/>1st Generation</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port-2">
+                    <a href="https://www.clipstudio.net/es/purchase/">
+                        <img src="http://localhost/images/ñloikujyhtgrfd.jpg"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p class="text-center"><b style="text-decoration-line: underline;">Software for Draw <br/>Clip Studio Paint</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port-2">
+                    <a href="https://www.amazon.com/-/es/">
+                        <img src="http://localhost/images/images.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p class="text-center"><b style="text-decoration-line: underline;">My Traditional<br/>Materials</b></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@*Descubre su obra*@
+<div>
+    <section class="contenedor about-us">
+        <br/><br/><br/><br/><br/><h2 class="text-center">Discover his work</h2><br/>
+        <div class="contenedor-sobre-nosotros">
+            <div class="contenido-textos">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <h3><span>//</span>Products, Art Commissions, and More...</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+                <div class="btn-group text-center" role="group" aria-label="Basic mixed styles example">
+                    <a class="btn btn-primary float-end" asp-controller="Product" asp-action="Index" >Products</a>
+                    <a class="btn btn-outline-primary" asp-controller="Commission" asp-action="Create">Commissions</a>
+                </div>
+            </div>
+            <img class="img-about-us-foto" src="http://localhost/images/pexels-shukhrat-umarov-1585634.jpg" alt=""/>
+        </div>
+    </section>
+</div>
+
+@*Tabloide de Productos*@
+<div class="">
+    <setion class="portafolio">
+        <div class="container">
+            <br/><br/><br/><br/><br/><h2 class="titulo text-center">Products!</h2><br/>
+            <div class="galeria-port">
+
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img12.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img35.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/dibujo.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img32.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img3.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img4.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img5.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img17.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img30.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img14.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img28.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img34.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img2.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="imagen-port">
+                    <a asp-controller="Product" asp-action="Index">
+                        <img src="http://localhost/images/merch/img6.png"/>
+                        <div class="hover-galeria">
+                            <img src="http://localhost/images/check.png" />
+                            <p><b style="text-decoration-line: underline;">Show All Products</b></p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </setion>   
+</div>
+
+@*Tablide de 3 parrafos porque aja*@
+<div>
+    <section class="contenedor about-us">
+        <br/><br/><br/><br/><br/><h2 class="text-center">Art commissions you can order</h2><br/>
+        <div class="contenedor-sobre-nosotros">
+            <img class="img-about-us" src="http://localhost/images/pexels-antoni-shkraba-4348403.jpg" alt=""/>
+            <div class="contenido-textos">
+                <h3><span>1</span>Commission type 1: </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+            
+                <h3><span>2</span>Commission type 2: </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+            
+                <h3><span>3</span>Commission type 3: </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+            
+                <h3><span>4</span>Commission type 4: </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada iaculis faucibus. Sed eu convallis lectus. Etiam imperdiet, quam vel posuere sagittis, dui mi dictum nisl, ac mattis tellus dolor in neque. Pellentesque egestas diam ut suscipit blandit. Nam elementum justo in erat pretium, ac rhoncus diam venenatis. Nulla sed nunc vel lorem tristique condimentum. In et feugiat felis. Nulla facilisi. Maecenas porta magna ac diam faucibus posuere ac vitae purus. Proin tempus quis velit quis volutpat. Pellentesque at mauris ut dui semper luctus.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+@*banner de comission*@
+<div>
+    <br/><br/><br/><br/><br/><h3 class="text-center"><b>Commissions!</b></h3><br/>
+    <div class="container">
+        <div class="contact">
+            <section class="extra">
+                <h1 class="Text_contact">Ruiso Art Page</h1>
+            </section>
+            
+            <section class="myFtexts">
+                <h1 class="Text_contact">Open Commission</h1>
+            </section>
+
+            <section class="extra">
+                <h1 class="Text_contact">Open Art Commissions, ask for yours now!</h1>
+            </section>
+
+            <section class="extra">
+                <a class="btn btn-light" asp-controller="Commission" asp-action="Create" style="width: 200px">
+                    <i class="bi bi-suit-heart-fill"></i>
+                    Order Now!
+                </a>
+            </section>
+            
+        </div>
+        
+    </div>
+</div>
+
+@*Banner Random*@
+
+@*Pedazo de letra porque aja*@
+<div style="text-align: justify;, width: 800px;">
+    <br/><br/><br/><br/><br/>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisi tempor, tincidunt metus eu, rutrum nunc. In hac habitasse platea dictumst. Suspendisse interdum tristique venenatis. Morbi ut metus eu tortor vestibulum molestie ut eget eros. Etiam et tortor ullamcorper, euismod urna eu, suscipit nulla. Vestibulum ut dolor gravida, condimentum augue a, dapibus mi. Nullam molestie rhoncus finibus.<br/>
+        Maecenas pretium nunc at nisi luctus, tincidunt sagittis diam condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut faucibus diam quis velit eleifend scelerisque. Praesent commodo erat non ante luctus, et tristique justo ullamcorper. Donec eu neque vel libero semper aliquet sit amet eu mi. Fusce at magna in magna elementum fermentum non sit amet leo. Nam ac massa luctus, porta felis sagittis, efficitur neque. Phasellus et euismod neque.<br/>
+        Proin porttitor metus eu lectus tristique facilisis. Mauris laoreet condimentum velit, ac sagittis orci laoreet a. Praesent et arcu et lectus mattis lacinia. Vestibulum bibendum elit in tempor efficitur. Phasellus sed orci placerat, faucibus nibh a, lacinia augue. Etiam vel velit rhoncus, malesuada felis quis, rhoncus risus. Maecenas odio sapien, efficitur a porta vitae, pulvinar vitae enim. Quisque aliquet imperdiet vestibulum. Nullam consequat dolor fringilla accumsan congue. Proin ullamcorper odio nec semper vehicula. Fusce elit quam, pulvinar tristique dapibus sed, pulvinar ut nibh. Nullam at posuere velit. Pellentesque ut velit condimentum, auctor neque a, varius ligula. Mauris placerat dui tortor, vitae accumsan turpis convallis congue. Sed ullamcorper egestas eleifend. Sed nec dui quam.<br/>
+        Etiam vel sodales augue. Vestibulum blandit, massa eu volutpat tincidunt, purus nisi commodo dolor, a fringilla elit ante quis est. Aliquam eget urna odio. Integer dui ante, laoreet sit amet aliquam a, vehicula eget erat. Aenean felis massa, rutrum ut ante vel, dignissim ultricies mauris. Nam laoreet erat augue, in egestas felis tempus at. Curabitur mattis justo fringilla sodales commodo. Mauris rhoncus, lectus in rutrum hendrerit, lectus purus laoreet elit, a sagittis ex velit at leo. Aliquam suscipit posuere risus ut euismod. Donec nec libero felis. Ut tellus dolor, ornare non placerat et, laoreet consectetur ante. Nullam sed erat mi. Phasellus gravida urna nulla, at tincidunt felis suscipit ut. Donec aliquam ac sapien eget convallis. Vivamus id feugiat eros.<br/>
+        Phasellus dolor velit, aliquet nec elit id, condimentum consectetur ligula. Nunc lacinia nulla in erat elementum consequat. Nunc consequat libero et nisi pretium, vel auctor ex egestas. Pellentesque pretium, urna eget scelerisque viverra, ex elit varius nulla, ut mollis sem enim id dolor. Ut ornare consectetur ultrices. Etiam et condimentum augue. Etiam nec justo vehicula, semper ante sed, porttitor est. Phasellus rutrum euismod bibendum. Etiam cursus cursus lectus, et tincidunt massa pellentesque vitae. Nullam ipsum libero, laoreet nec laoreet ut, imperdiet a elit. Ut sed lectus viverra, varius arcu quis, interdum mi. Pellentesque vitae malesuada turpis, vel cursus nisl.<br/>
+    </p>
+    <br/><br/>
+</div>
+@*banner de Contact to me*@

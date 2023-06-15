@@ -1,0 +1,116 @@
+@model IEnumerable<Commission>
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+@{
+    ViewData["Title"] = "Commission List";
+}
+
+<div class="row">
+    <h1 class="text-center">Commission List</h1>
+    <div class="col-md-15 offset-md-0">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(m => m.ImageReference)</th>
+
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.Tittle),
+                            "Index",
+                            new { sortOn = "Tittle", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.description),
+                            "Index",
+                            new { sortOn = "description", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.AproxPrice),
+                            "Index",
+                            new { sortOn = "AproxPrice", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.Email),
+                            "Index",
+                            new { sortOn = "Email", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.PersonName),
+                            "Index",
+                            new { sortOn = "PersonName", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    <th>@Html.ActionLink(
+                            @Html.DisplayNameFor(m => m.PersonLastName),
+                            "Index",
+                            new { sortOn = "PersonLastName", orderBy = ViewBag.OrderBy, pSortOn = ViewBag.SortOn }
+                        )
+                    </th>
+                    
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @*@foreach (var item in Model)*@
+                @foreach (var item in ViewBag.commis)
+                {
+                    <tr class="text-center">
+                        @*<!-- Aqui van los elementos -->*@
+
+                        <td class="text-center">
+                            <img class="rounded-circle" src="@item.ImageReference" alt="@item.ImageReference" style="width:100px"/>
+                        </td>
+
+                        <td class="text-start small">@item.Tittle</td>
+                        <td class="text-start small">@item.description</td>
+                        <td class="text-start small">@item.AproxPrice</td>
+                        <td class="text-start small">@item.Email</td>
+                        <td class="text-start small">@item.PersonName</td>
+                        <td class="text-start small">@item.PersonLastName</td>
+
+                        @*<!-- Aqui van las acciones CRUD -->*@
+                        <td class="text-start d-flex">
+                            <a class="btn btn-outline-primary btn-sm col-3" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+                            <a class="btn btn-outline-info btn-sm col-3" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> Details</a>
+                            <a class="btn btn-danger text-white btn-sm col-3" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+                <div class="row">
+                    <div class="pagination pagination-sm justify-content-center">
+                        @Html.PagedListPager(
+                            (IPagedList)ViewBag.commis,
+                            page => Url.Action(
+                                "Index",
+                                "Commission",
+                                new
+                                {
+                                    page,
+                                    sortOn = ViewBag.SortOn,
+                                    orderBy = ViewBag.OrderBy,
+                                    pSortOn = ViewBag.SortOn
+                                }
+                                ),
+                            new PagedListRenderOptions()
+                            {
+                                UlElementClasses = new[] { "pagination" },
+                                ContainerDivClasses = new[] { "pagination-container" },
+                                LiElementClasses = new string[] { "page-item" },
+                                PageClasses = new string[] { "page-link" }
+                            }
+                            )
+                    </div>
+                </div>
+
+            </tbody>
+            <tfoot>
+                @await Html.PartialAsync("_CreateItem", "Commission")
+            </tfoot>
+        </table>    
+    </div>
+</div>

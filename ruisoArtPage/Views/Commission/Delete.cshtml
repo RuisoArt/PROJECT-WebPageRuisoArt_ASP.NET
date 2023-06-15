@@ -1,0 +1,64 @@
+@model Commission
+
+@{
+    ViewData["Title"] = "Delete for Commission" + Model.Tittle;
+}
+<div>
+    <h1 class="text-center">Delete<br/>@Model.Tittle</h1>
+
+    <div class="container text-center">
+        <form asp-action="Delete">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group text-center mt-3">
+                        <img src="@Model.ImageReference" style="width: 350px"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-1">           
+
+                        <div class="form-group">
+                        <label asp-for="Tittle" class="control-label"></label>
+                        <input asp-for="Tittle" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="description" class="control-label"></label>
+                            <textarea  asp-for="description" class="form-control" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AproxPrice" class="control-label"></label>
+                            <input asp-for="AproxPrice" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonName" class="control-label"></label>
+                            <input asp-for="PersonName" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonLastName" class="control-label"></label>
+                            <input  asp-for="PersonLastName" class="form-control" readonly />
+                        </div>
+                        @*
+                        <div class="form-group">
+                            <label asp-for="TypeId" class="control-label"></label>
+                            <input  asp-for="TypeId" class="form-control"  readonly/>
+                        </div>*@
+                
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <input type ="hidden" asp-for="@Model.Id"/>
+                <input type="submit" class="btn btn-danger text-while float-end" value="Confirm"/>
+                <a class="btn btn-outline-secondary float-end" asp-action="Index" >Show all</a>
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+

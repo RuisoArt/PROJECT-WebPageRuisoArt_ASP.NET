@@ -1,0 +1,176 @@
+@model Provider
+
+@{
+    ViewData["Title"] = "Edit for Provider" + Model.name;
+}
+<div>
+    <h1 class="text-center">Edit<br/>@Model.name</h1>
+    <div class="container text-center">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="image" class="control-label"></label>
+                        <input asp-for="image" class="form-control" id="Photo" />
+                        <span asp-validation-for="image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center mt-3">
+                        <img class="border-info rounded-circle" src="@Model.image" style="width: 350px" id="PhotoPreview"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <textarea  asp-for="description" class="form-control" ></textarea>
+                        <span asp-validation-for="description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="phone" class="control-label"></label>
+                        <input asp-for="phone" class="form-control" />
+                        <span asp-validation-for="phone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="link" class="control-label"></label>
+                        <input asp-for="link" class="form-control" />
+                        <span asp-validation-for="link" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed0" class="control-label"></label>
+                        <textarea  asp-for="socialRed0" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed0" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed1" class="control-label"></label>
+                        <textarea  asp-for="socialRed1" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed2" class="control-label"></label>
+                        <textarea  asp-for="socialRed2" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed3" class="control-label"></label>
+                        <textarea  asp-for="socialRed3" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed3" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-md-8 offset-md-2">
+
+                    <div class="form-group">
+                        <label asp-for="socialRed4" class="control-label"></label>
+                        <textarea  asp-for="socialRed4" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed4" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed5" class="control-label"></label>
+                        <textarea  asp-for="socialRed5" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed5" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed6" class="control-label"></label>
+                        <textarea  asp-for="socialRed6" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed6" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed7" class="control-label"></label>
+                        <textarea  asp-for="socialRed7" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed7" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed8" class="control-label"></label>
+                        <textarea  asp-for="socialRed8" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed8" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed9" class="control-label"></label>
+                        <textarea  asp-for="socialRed9" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed9" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed10" class="control-label"></label>
+                        <textarea  asp-for="socialRed10" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed10" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed11" class="control-label"></label>
+                        <textarea  asp-for="socialRed11" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed11" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed12" class="control-label"></label>
+                        <textarea  asp-for="socialRed12" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed12" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed13" class="control-label"></label>
+                        <textarea  asp-for="socialRed13" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed13" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed14" class="control-label"></label>
+                        <textarea  asp-for="socialRed14" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed14" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed15" class="control-label"></label>
+                        <textarea  asp-for="socialRed15" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed15" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed16" class="control-label"></label>
+                        <textarea  asp-for="socialRed16" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed16" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed17" class="control-label"></label>
+                        <textarea  asp-for="socialRed17" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed17" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed18" class="control-label"></label>
+                        <textarea  asp-for="socialRed18" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed18" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="socialRed19" class="control-label"></label>
+                        <textarea  asp-for="socialRed19" class="form-control" ></textarea>
+                        <span asp-validation-for="socialRed19" class="text-danger"></span>
+                    </div>
+                
+                        <div class="form-group mt-2">
+                            <input type="submit" class="btn btn-outline-success float-end" value="Update" />
+                            <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        var output = document.getElementById('PhotoPreview');
+        $(document).ready(function () {
+            output.src = $('#Photo').val();
+        })
+        $("#Photo").on("change", function () {
+            output.src = $(this).val();
+        })
+    </script>
+}
